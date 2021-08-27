@@ -9,7 +9,8 @@ curl -XPOST "http://localhost:9000/2015-03-31/functions/function/invocations" -d
 # {"statusCode":200,"body":"{\"format\":\"jpeg\",\"width\":513,\"height\":767,\"space\":\"srgb\",\"channels\":3,\"depth\":\"uchar\",\"density\":72,\"chromaSubsampling\":\"4:4:4\",\"isProgressive\":false,\"hasProfile\":false,\"hasAlpha\":false}"}
 
 curl -XPOST "http://localhost:9000/2015-03-31/functions/function/invocations" -d '{"fileType": "bmp"}'
-# {"errorType":"Error","errorMessage":"Input file contains unsupported image format","trace":["Error: Input file contains unsupported image format"]}
+# BEFORE: {"errorType":"Error","errorMessage":"Input file contains unsupported image format","trace":["Error: Input file contains unsupported image format"]}
+# AFTER: {"statusCode":200,"body":"{\"format\":\"magick\",\"width\":200,\"height\":200,\"space\":\"srgb\",\"channels\":3,\"depth\":\"uchar\",\"density\":72,\"isProgressive\":false,\"pages\":1,\"pageHeight\":200,\"hasProfile\":false,\"hasAlpha\":false}"}
 
 docker exec -ti sharp-magick-lambda identify test.jpg
 # test.jpg JPEG 513x767 513x767+0+0 8-bit sRGB 106981B 0.000u 0:00.001

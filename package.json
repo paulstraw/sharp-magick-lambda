@@ -9,6 +9,6 @@
   "author": "Paul Straw",
   "license": "ISC",
   "dependencies": {
-    "sharp": "^0.29.0"
+    "sharp": "git://github.com/paulstraw/sharp.git#2864-imagemagick-7-loaders"
   }
 }
