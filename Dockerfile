@@ -8,6 +8,7 @@ RUN yum install -y \
   libtool-ltdl-devel \
   glib2-devel \
   libjpeg-turbo-devel \
+  LibRaw-devel \
   orc-devel
 
 ENV PKG_CONFIG_PATH=/usr/local/lib/pkgconfig

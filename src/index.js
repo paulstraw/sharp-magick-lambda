@@ -3,6 +3,8 @@ const sharp = require('sharp')
 const files = {
   'bmp': './test.bmp',
   'jpg': './test.jpg',
+  'rw2': './Panasonic-GH4.RW2',
+  'arw': './Sony-A550.ARW',
 }
 
 exports.handler = async (input) => {
